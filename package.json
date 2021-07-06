@@ -11,5 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.4.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
   }
 }
