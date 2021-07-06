@@ -1,3 +1,3 @@
-exports.condition = /[Hh]i.*/
+exports.condition = /^[Hh]i */
 
-exports.addFeature = (bot) => bot.hears(condition, (ctx) => ctx.reply('Hallo Froindä!!!'))
+exports.addTo = (bot) => bot.hears(condition, (ctx) => ctx.reply('Hallo Froindä!!!'))
