@@ -2,14 +2,17 @@
   "name": "season-crop-farming-bot",
   "version": "1.0.0",
   "description": "A just for fun Telegram bot",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node --trace-warnings index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --trace-warnings src/index.js",
+    "test": "jest"
   },
   "author": "Matthias Nemeth",
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.4.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
   }
 }
