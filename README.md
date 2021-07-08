@@ -1,3 +1,5 @@
+![ci workflow](https://github.com/manedev79/season-crop-farming-bot/actions/workflows/ci.yml/badge.svg)
+
 # Season Crop Farming Bot
 
 A just for fun Telegram Bot.
