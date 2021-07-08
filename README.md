@@ -33,7 +33,7 @@ You need to set the following environment variables:
 ```
 export BOT_TOKEN=<your-bot-token>
 export DEBUG='telegraf:*'
-export URL=https://1234567890.ngrok.io
+export URL=https://1234567890.ngrok.io # Auto-set by `ngrok-start.sh`
 export PORT=8443
 export NGROK_AUTH_TOKEN=<ngrok-auth-token>
 ```
