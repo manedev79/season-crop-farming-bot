@@ -5,7 +5,7 @@ function ngrok-download () {
         mkdir ngrok
     fi
 
-    curl -o ./ngrok/ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    curl -o ./ngrok/ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip # TODO: Consider MacOS
 
     unzip -o -d ngrok ./ngrok/ngrok.zip 
 }
