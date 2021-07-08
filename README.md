@@ -16,6 +16,15 @@ This bot can be added to group chats.
 
 ## Local Development
 
+### Prerequisites
+
+* Linux (tested in Ubuntu)
+    * Should be easy to adapt to MacOS, mainly other ngrok binary.
+* curl
+* jq
+
+### SSH Tunnel to local webhook
+
 Use [ngrok](https://ngrok.com) for local webhook testing. 
 You need to set the following environment variables:
 
@@ -26,6 +35,12 @@ export URL=https://1234567890.ngrok.io
 export PORT=8443
 export NGROK_AUTH_TOKEN=<ngrok-auth-token>
 ```
+
+### NPM start script for local testing
+
+* Start ngrok: `./ngrok-start.sh`
+* Run `npm run start-local`
+    * This will read the ngrok URL from the [local ngrok API](http://localhost:4040)
 
 ## Links
 
