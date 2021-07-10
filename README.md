@@ -1,4 +1,5 @@
 ![ci workflow](https://github.com/manedev79/season-crop-farming-bot/actions/workflows/ci.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/manedev79/season-crop-farming-bot/badge.svg?branch=main)](https://coveralls.io/github/manedev79/season-crop-farming-bot?branch=main)
 
 # Season Crop Farming Bot
 
