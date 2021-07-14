@@ -30,6 +30,14 @@ This bot can be added to group chats.
 
 Use [ngrok](https://ngrok.com) for local webhook testing.  
 
+You must set the following env vars for the ngrok related scripts to work:
+
+```
+export NGROK_AUTH_TOKEN=<ngrok-auth-token>
+export PORT=8443
+```
+
+### NPM start script for local testing
 
 We are using [dotenv](https://www.npmjs.com/package/dotenv) to load environment variables.  
 __You must to set the following environment variables in `.env`__
@@ -38,11 +46,7 @@ __You must to set the following environment variables in `.env`__
 BOT_TOKEN=<your-bot-token>
 DEBUG='telegraf:*'
 URL=https://1234567890.ngrok.io # Auto-set by `ngrok-start.sh`
-PORT=8443
-NGROK_AUTH_TOKEN=<ngrok-auth-token>
 ```
-
-### NPM start script for local testing
 
 * Start ngrok: `./ngrok-start.sh`
 * Run `npm run start-local`
