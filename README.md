@@ -28,8 +28,11 @@ This bot can be added to group chats.
 
 ### SSH Tunnel to local webhook
 
-Use [ngrok](https://ngrok.com) for local webhook testing. 
-You need to set the following environment variables:
+Use [ngrok](https://ngrok.com) for local webhook testing.  
+
+
+We are using [dotenv](https://www.npmjs.com/package/dotenv) to load environment variables.  
+__You must to set the following environment variables in `.env`__
 
 ```
 export BOT_TOKEN=<your-bot-token>
