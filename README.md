@@ -35,11 +35,11 @@ We are using [dotenv](https://www.npmjs.com/package/dotenv) to load environment 
 __You must to set the following environment variables in `.env`__
 
 ```
-export BOT_TOKEN=<your-bot-token>
-export DEBUG='telegraf:*'
-export URL=https://1234567890.ngrok.io # Auto-set by `ngrok-start.sh`
-export PORT=8443
-export NGROK_AUTH_TOKEN=<ngrok-auth-token>
+BOT_TOKEN=<your-bot-token>
+DEBUG='telegraf:*'
+URL=https://1234567890.ngrok.io # Auto-set by `ngrok-start.sh`
+PORT=8443
+NGROK_AUTH_TOKEN=<ngrok-auth-token>
 ```
 
 ### NPM start script for local testing
