@@ -1,6 +1,7 @@
 const Bot = require('./Bot')
 const GreetingFeature = require('../features/GreetingFeature')
 const LaughingFeature = require('../features/LaughingFeature')
+const ZenFeature = require('../features/ZenFeature')
 const { Telegraf } = require('telegraf')
 jest.mock('telegraf')
 
@@ -37,4 +38,5 @@ test('Features are configured', () => {
     // TODO: This is bad since the test depends on the order of method calls!
     expect(botMock.hears.mock.calls[0][0]).toBe(GreetingFeature.condition);
     expect(botMock.hears.mock.calls[1][0]).toBe(LaughingFeature.condition);
+    expect(botMock.hears.mock.calls[2][0]).toBe(ZenFeature.condition);
 })

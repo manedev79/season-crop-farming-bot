@@ -3,6 +3,7 @@ const HelpCommand = require('../commands/HelpCommand')
 const VersionCommand = require('../commands/VersionCommand')
 const GreetingFeature = require('../features/GreetingFeature')
 const LaughingFeature = require('../features/LaughingFeature')
+const ZenFeature = require('../features/ZenFeature')
 
 const createBot = (botToken, url, port) => {
     const bot = new Telegraf(botToken)
@@ -11,6 +12,7 @@ const createBot = (botToken, url, port) => {
     VersionCommand.addTo(bot)
     GreetingFeature.addTo(bot)
     LaughingFeature.addTo(bot)
+    ZenFeature.addTo(bot)
 
     bot.launch({
     webhook: {
