@@ -1,29 +1,13 @@
 require('dotenv').config()
-const fs = require('fs')
-const { Telegraf } = require('telegraf')
 
-const HelpCommand = require('./commands/HelpCommand')
-const VersionCommand = require('./commands/VersionCommand')
-const GreetingFeature = require('./features/GreetingFeature')
-const LaughingFeature = require('./features/LaughingFeature')
+const Bot = require('./bot/Bot')
 
 const BOT_TOKEN = process.env.BOT_TOKEN || '';
 const PORT = Number(process.env.PORT) || 3000;
 const URL = process.env.URL || 'https://heroku-or-ngrok.org';
 
-const bot = new Telegraf(BOT_TOKEN)
 
-HelpCommand.addTo(bot)
-GreetingFeature.addTo(bot)
-LaughingFeature.addTo(bot)
-VersionCommand.addTo(bot)
-
-bot.launch({
-  webhook: {
-    domain: URL,
-    port: PORT
-  }
-})
+const bot = Bot.createBot(BOT_TOKEN, URL, PORT)
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
