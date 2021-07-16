@@ -1,7 +1,18 @@
 const axios = require('axios');
 jest.mock('axios')
 
+const mockContext = {
+    replyWithMarkdown: jest.fn(),
+    reply: jest.fn()
+};
+
 const ZenFeature = require('./ZenFeature')
+
+beforeEach(() => {
+    axios.mockClear()
+    mockContext.replyWithMarkdown.mockClear()
+    mockContext.reply.mockClear()
+});
 
 test('Trigger condition: Zen', () => {
     expect('Zen').toMatch(ZenFeature.condition)
@@ -17,14 +28,11 @@ test('Trigger condition: Schlaues', () => {
 
 test('Send message with zen', async () => {
     const zen = "Do not count your chicken before they've hatched"
-    const response = {data: zen}
-    axios.get.mockImplementation(() => Promise.resolve(response))
-    const mockContext = {
-        replyWithMarkdown: jest.fn().mockReturnThis()
-    };
+    axios.get.mockImplementation(() => Promise.resolve({data: zen}))
 
     await ZenFeature.getZen(mockContext)
-    expect(mockContext.replyWithMarkdown).toHaveBeenCalledWith(`Think about that:  \n_Do not count your chicken before they've hatched_`)
+
+    expect(mockContext.replyWithMarkdown).toHaveBeenCalledWith(`Think about that:  \n_${zen}_`)
 })
 
 test('Send message without zen', async () => {
@@ -32,10 +40,7 @@ test('Send message without zen', async () => {
         throw new Error('No zen today')
     })
 
-    const mockContext = {
-        reply: jest.fn().mockReturnThis()
-    };
-    
     await ZenFeature.getZen(mockContext)
+
     expect(mockContext.reply).toHaveBeenCalledWith('No zen at the moment 🤤')
 })
