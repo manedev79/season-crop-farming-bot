@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const axios = require('axios').default
 
 const condition = /Zen|Weisheit|Schlaues/
 const ZEN_URL = 'https://api.github.com/zen'
@@ -13,4 +13,5 @@ async function getZen(ctx) {
   }
 
 exports.condition = condition
+exports.getZen = getZen
 exports.addTo = (bot) => bot.hears(condition, (ctx) => getZen(ctx))
